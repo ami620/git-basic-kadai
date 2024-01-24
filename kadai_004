@@ -1,0 +1,118 @@
+PS C:\Users\rrtd_\OneDrive\デスクトップ> mkdir git_challenge
+
+    ディレクトリ: C:\Users\rrtd_\OneDrive\デスクトップ
+
+
+Mode                 LastWriteTime         Length Name                                                                                                                   
+----                 -------------         ------ ----                                                                                                                   
+d-----        2024/01/24     15:07                git_challenge                                                                                                          
+
+PS C:\Users\rrtd_\OneDrive\デスクトップ> git init
+Initialized empty Git repository in C:/Users/rrtd_/OneDrive/デスクトップ/.git/
+PS C:\Users\rrtd_\OneDrive\デスクトップ> # 変更を取り消す
+>> git checkout -- .git
+error: pathspec '.git' did not match any file(s) known to git
+PS C:\Users\rrtd_\OneDrive\デスクトップ> cd git_challenge
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> echo Hello, world!>>hello_world.txt
+Hello
+world!>>hello_world.txt
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> echo Hello, world!>>hello_world.txt
+Hello
+world!>>hello_world.txt
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> cd ../
+PS C:\Users\rrtd_\OneDrive\デスクトップ> cd git_tutorial
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_tutorial> echo Hello, world!>>hello_world.txt
+Hello
+world!>>hello_world.txt
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> cd hello_world
+cd : パス 'C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge\hello_world' が存在しないため検出できません。
+発生場所 行:1 文字:1
++ cd hello_world
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\rrtd_\...nge\hello_world:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+ 
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> cd hello_world.txt
+発生場所 行:1 文字:1
++ cd hello_world.txt
++ ~~~~~~~~~~~~~~~~~~
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+ 
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> hello_world
+hello_world : 用語 'hello_world' は、コマンドレット、関数、スクリプト ファイル、または操作可能なプログラムの名前として認識されません。名前が正しく記述されていることを確 
+認し、パスが含まれている場合はそのパスが正しいことを確認してから、再試行してください。
+発生場所 行:1 文字:1
++ hello_world
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+cd : パス 'C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge\hello_world' が存在しないため検出できません。
+発生場所 行:1 文字:1
++ cd hello_world
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\rrtd_\...nge\hello_world:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+ 
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git status
+On branch main
+
+No commits yet
+  (use "git add <file>..." to include in what will be committed)
+        hello_world.txt
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git add hello_world.txt
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello_world.txt
+
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git add hello_world.txt
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello_world.txt
+
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git commit -m "hello_world.txtを追加"
+>> 
+[main (root-commit) ca70956] hello_world.txtを追加
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello_world.txt
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git commit -m "日本語訳を追記"       
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git add hello_world.txt
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git commit -m "日本語訳を追記" 
+[main 458f15a] 日本語訳を追記
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git log
+commit 458f15a38f52dbe058bc536d592f9c339ee4b221 (HEAD -> main)
+Author: ami620 <rrte_620@outlook.jp>
+Date:   Wed Jan 24 15:42:42 2024 +0900
+
+    日本語訳を追記
+
+commit ca70956235a17f894ec2027619c408d755cb3c9c
+Author: ami620 <rrte_620@outlook.jp>
+Date:   Wed Jan 24 15:40:48 2024 +0900
+
+    hello_world.txtを追加
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git log -- oneline
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git log--oneline
+git: 'log--oneline' is not a git command. See 'git --help'.
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> git log --oneline
+>> 
+458f15a (HEAD -> main) 日本語訳を追記
+ca70956 hello_world.txtを追加
+PS C:\Users\rrtd_\OneDrive\デスクトップ\git_challenge> 
